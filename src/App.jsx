@@ -1,9 +1,12 @@
+import Starter from "./components/Starter/Starter"
 
 
 function App() {
- return(
-  <>
-  </>
+  return (
+    <>
+      {/* <Starter /> */}
+      
+    </>
   )
 }
 
