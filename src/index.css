@@ -6,3 +6,8 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 500px;
 }
+
+
+*{
+  box-sizing: border-box;
+}
