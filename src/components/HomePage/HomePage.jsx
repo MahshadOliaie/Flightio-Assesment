@@ -1,5 +1,6 @@
 import FilterBar from '../FilterBar/FilterBar'
 import Header from '../Header/Header'
+import ProductsContainer from '../ProductsContainer/ProductsContainer'
 import SearchBar from '../SearchBar/SearchBar'
 import CSS from './homePage.module.css'
 
@@ -14,6 +15,7 @@ function HomePage() {
 
             <SearchBar />
             <FilterBar />
+            <ProductsContainer />
         </>
     )
 }
