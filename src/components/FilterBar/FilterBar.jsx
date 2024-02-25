@@ -7,13 +7,8 @@ function FilterBar(){
         <>
         <div className={CSS.filterBar}>
             {categories.map(category =>{
-                console.log(category)
-                return <p className={CSS.filterBtn}>{category}</p>
+                return <p key={category} className={CSS.filterBtn}>{category}</p>
             })}
-{/* 
-            <p className={`${CSS.filterBtn} ${CSS.activeBtn}`}>Paper Lamp</p>
-            <p className={CSS.filterBtn}>Dung Lamp</p>
-            <p className={CSS.filterBtn}>Fancy</p> */}
         </div>
         </>
     )
