@@ -1,8 +1,10 @@
-import { createContext} from "react";
+import { createContext } from "react";
 
 
 const Products = createContext({
-    products: []
+    products: [],
+    filteredProducts: [],
+    setFilteredProducts: () => { }
 })
 
 export default Products

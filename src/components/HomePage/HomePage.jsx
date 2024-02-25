@@ -10,10 +10,12 @@ import useFetch from '../../hooks/useFetch/useFetch'
 
 function HomePage() {
     const [products, setProducts] = useState([])
+    const [filteredProducts , setFilteredProducts] = useState([])
     const data = useFetch('https://fakestoreapi.com/products')
-    
+
     useEffect(() => {
         setProducts(data)
+        setFilteredProducts(data)
     }, [data])
 
     return (
@@ -21,6 +23,8 @@ function HomePage() {
 
             <Products.Provider value={{
                 products,
+                filteredProducts,
+                setFilteredProducts
             }}>
                 <Header />
                 <div className={CSS.heading}>
