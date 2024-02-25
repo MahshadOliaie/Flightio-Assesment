@@ -1,15 +1,19 @@
+import useFetch from '../../hooks/useFetch/useFetch'
 import Product from '../Product/Product'
 import CSS from './productsContainer.module.css'
 
-function ProductsContainer(){
-    return(
+function ProductsContainer() {
+    const data = useFetch('https://fakestoreapi.com/products')
+
+    return (
         <>
-        <div className={CSS.productsContainer}>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-        </div>
+            <div className={CSS.productsContainer}>
+                {
+                    data.map((item) => {
+                        return <Product key={item.id} data={item} />
+                    })
+                }
+            </div>
         </>
     )
 }
