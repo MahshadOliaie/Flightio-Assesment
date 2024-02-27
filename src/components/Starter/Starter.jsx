@@ -1,11 +1,12 @@
+
 import CSS from './starter.module.css'
 
-function Starter(){
-    return(
+function Starter({onClick}) {
+    return (
         <>
-        <div className={CSS.container}>
-            <p className={CSS.startBtn}>Get Started</p>
-        </div>
+            <div className={CSS.container}>
+                <p className={CSS.startBtn} onClick={onClick}>Get Started</p>
+            </div>
         </>
     )
 }
