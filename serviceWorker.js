@@ -1,6 +1,6 @@
 
 
-const CACHE_NAME = "version-1";
+const CACHE_NAME = "cache-v1";
 const urlsToCache = [
     '/',
     '/index.html',
@@ -41,17 +41,16 @@ self.addEventListener('fetch', (event) => {
 
 
 self.addEventListener('activate', (event) => {
-    const cacheWhiteList = [];
-    cacheWhiteList.push(CACHE_NAME);
-
     event.waitUntil(
-        caches.keys().then((cacheNames) => Promise.all(
-            cacheNames.map((cacheName) => {
-                if (!cacheWhiteList.includes(cacheName)) {
-                    return caches.delete(cacheName);
-                }
-            })
-        ))
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    if (cacheName !== CACHE_NAME) {
+                        caches.delete(cacheName);
+                    }
+                })
+            )
+        })
     )
 
 })
