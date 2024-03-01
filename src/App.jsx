@@ -4,11 +4,12 @@ import Starter from "./components/Starter/Starter"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import FavoritePage from "./components/FavoritePage/FavoritePage"
 import FavoriteItems from "./context/favoriteItem/FavoriteItem"
+import ProductDetail from "./components/ProductDetail/ProductDetail"
 
 
 function App() {
   const [isFirstTime, setIsFirstTime] = useState(localStorage.getItem("isFirstTime") || "true")
-  const [favoriteItems , setFavoriteItems] = useState([])
+  const [favoriteItems, setFavoriteItems] = useState([])
 
   function isFirstTimeSetter() {
     localStorage.setItem("isFirstTime", "false")
@@ -27,6 +28,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/favorite" element={<FavoritePage />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
               </Routes>
             </BrowserRouter>
           </FavoriteItems.Provider>

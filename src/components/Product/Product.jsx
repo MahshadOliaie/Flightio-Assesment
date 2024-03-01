@@ -2,13 +2,17 @@ import { useContext } from 'react';
 import HeartSvg from '../HeartSvg/HeartSvg'
 import CSS from './product.module.css'
 import FavoriteItems from '../../context/favoriteItem/FavoriteItem';
+import { useNavigate } from 'react-router-dom';
 
 function Product({ data }) {
     const { favoriteItems, setFavoriteItems } = useContext(FavoriteItems)
+    const navigate = useNavigate()
 
     const isFavorite = favoriteItems.find((item) => item.id === data.id);
 
     function handleClick() {
+        event.stopPropagation() 
+        
         if (!isFavorite) {
             setFavoriteItems([...favoriteItems, data])
         }
@@ -21,7 +25,7 @@ function Product({ data }) {
 
     return (
         <>
-            <div className={CSS.product}>
+            <div className={CSS.product} onClick={() => navigate(`/product/${data.id}`)}>
                 <div className={CSS.image}><img src={data.image} alt="" /></div>
                 <div className={CSS.about}>
                     <h3 className={CSS.title}>{data.title}</h3>
