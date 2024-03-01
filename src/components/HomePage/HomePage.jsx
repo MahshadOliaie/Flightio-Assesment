@@ -9,10 +9,10 @@ import Products from '../../context/products/Products'
 import useFetch from '../../hooks/useFetch/useFetch'
 import FavoriteItems from '../../context/favoriteItem/FavoriteItem'
 
+
 function HomePage() {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [favoriteItems , setFavoriteItems] = useState([])
     const data = useFetch('https://fakestoreapi.com/products')
 
     useEffect(() => {
@@ -28,10 +28,6 @@ function HomePage() {
                 filteredProducts,
                 setFilteredProducts
             }}>
-                <FavoriteItems.Provider value={{
-                    favoriteItems,
-                    setFavoriteItems
-                }}>
                     <Header />
                     <div className={CSS.heading}>
                         <p className={CSS.welcome}>Welcome, Flightio</p>
@@ -42,7 +38,6 @@ function HomePage() {
                     <FilterBar />
                     <ProductsContainer />
                     <ToolBar />
-                </FavoriteItems.Provider>
             </Products.Provider>
         </>
     )
