@@ -5,12 +5,14 @@ import ProductsContainer from '../ProductsContainer/ProductsContainer'
 import SearchBar from '../SearchBar/SearchBar'
 import ToolBar from '../ToolBar/ToolBar'
 import CSS from './homePage.module.css'
-import Products from '../context/products/Products'
+import Products from '../../context/products/Products'
 import useFetch from '../../hooks/useFetch/useFetch'
+import FavoriteItems from '../../context/favoriteItem/FavoriteItem'
 
 function HomePage() {
     const [products, setProducts] = useState([])
-    const [filteredProducts , setFilteredProducts] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
+    const [favoriteItems , setFavoriteItems] = useState([])
     const data = useFetch('https://fakestoreapi.com/products')
 
     useEffect(() => {
@@ -26,16 +28,21 @@ function HomePage() {
                 filteredProducts,
                 setFilteredProducts
             }}>
-                <Header />
-                <div className={CSS.heading}>
-                    <p className={CSS.welcome}>Welcome, Flightio</p>
-                    <h1 className={CSS.title}>Bring Designer Lamps This Diwali</h1>
-                </div>
+                <FavoriteItems.Provider value={{
+                    favoriteItems,
+                    setFavoriteItems
+                }}>
+                    <Header />
+                    <div className={CSS.heading}>
+                        <p className={CSS.welcome}>Welcome, Flightio</p>
+                        <h1 className={CSS.title}>Bring Designer Lamps This Diwali</h1>
+                    </div>
 
-                <SearchBar />
-                <FilterBar />
-                <ProductsContainer />
-                <ToolBar />
+                    <SearchBar />
+                    <FilterBar />
+                    <ProductsContainer />
+                    <ToolBar />
+                </FavoriteItems.Provider>
             </Products.Provider>
         </>
     )

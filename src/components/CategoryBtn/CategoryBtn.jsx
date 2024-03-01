@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import useFetch from '../../hooks/useFetch/useFetch';
-import Products from '../context/products/Products';
+import Products from '../../context/products/Products';
 import CSS from './categoryBtn.module.css'
 
 function CategoryBtn({ category, currentCat, setCurrentCat }) {

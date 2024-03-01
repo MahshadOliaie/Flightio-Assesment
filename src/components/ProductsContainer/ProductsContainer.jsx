@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Product from '../Product/Product'
 import CSS from './productsContainer.module.css'
-import Products from '../context/products/Products'
+import Products from '../../context/products/Products'
 
 function ProductsContainer() {
     const {filteredProducts} = useContext(Products)

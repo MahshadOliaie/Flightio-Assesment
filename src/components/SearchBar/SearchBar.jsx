@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react'
 import CSS from './searchBar.module.css'
-import Products from '../context/products/Products'
+import Products from '../../context/products/Products'
 
 function SearchBar() {
     const {products ,setFilteredProducts} = useContext(Products)
