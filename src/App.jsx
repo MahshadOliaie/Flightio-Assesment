@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import HomePage from "./components/HomePage/HomePage"
 import Starter from "./components/Starter/Starter"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
@@ -9,12 +9,16 @@ import ProductDetail from "./components/ProductDetail/ProductDetail"
 
 function App() {
   const [isFirstTime, setIsFirstTime] = useState(localStorage.getItem("isFirstTime") || "true")
-  const [favoriteItems, setFavoriteItems] = useState([])
+  const [favoriteItems, setFavoriteItems] = useState(JSON.parse(localStorage.getItem("favoriteItems")) || [])
 
   function isFirstTimeSetter() {
     localStorage.setItem("isFirstTime", "false")
     setIsFirstTime(localStorage.getItem("isFirstTime"))
   }
+
+  useEffect(() => {
+    localStorage.setItem("favoriteItems", JSON.stringify(favoriteItems))
+  }, [favoriteItems])
 
   return (
     <>
