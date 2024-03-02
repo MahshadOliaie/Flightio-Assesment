@@ -10,9 +10,8 @@ function Product({ data }) {
 
     const isFavorite = favoriteItems.find((item) => item.id === data.id);
 
-    function handleClick() {
-        event.stopPropagation() 
-        
+    function handleClick() {  
+
         if (!isFavorite) {
             setFavoriteItems([...favoriteItems, data])
         }
@@ -21,6 +20,7 @@ function Product({ data }) {
                 return item.id !== data.id
             }))
         }
+              
     }
 
     return (
