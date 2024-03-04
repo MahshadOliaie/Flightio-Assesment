@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import FavoritePage from "./components/FavoritePage/FavoritePage"
 import FavoriteItems from "./context/favoriteItem/FavoriteItem"
 import ProductDetail from "./components/ProductDetail/ProductDetail"
-import DetailSkeleton from "./components/Skeleton/DetailPageSkeleton/DetailSkeleton"
+
 
 
 function App() {

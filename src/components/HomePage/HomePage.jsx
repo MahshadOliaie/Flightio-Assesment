@@ -8,6 +8,7 @@ import CSS from './homePage.module.css'
 import Products from '../../context/products/Products'
 import useFetch from '../../hooks/useFetch/useFetch'
 import FavoriteItems from '../../context/favoriteItem/FavoriteItem'
+import Layout from '../Laout/Layout'
 
 
 function HomePage() {
@@ -28,7 +29,7 @@ function HomePage() {
                 filteredProducts,
                 setFilteredProducts
             }}>
-                    <Header />
+                <Layout>
                     <div className={CSS.heading}>
                         <p className={CSS.welcome}>Welcome, Flightio</p>
                         <h1 className={CSS.title}>Bring Designer Lamps This Diwali</h1>
@@ -37,7 +38,7 @@ function HomePage() {
                     <SearchBar />
                     <FilterBar />
                     <ProductsContainer />
-                    <ToolBar />
+                </Layout>
             </Products.Provider>
         </>
     )
