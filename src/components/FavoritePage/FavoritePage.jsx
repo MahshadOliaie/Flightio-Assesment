@@ -2,8 +2,6 @@ import { useContext } from 'react'
 import CSS from './index.module.css'
 import FavoriteItems from '../../context/favoriteItem/FavoriteItem'
 import Product from '../Product/Product'
-import Header from '../Header/Header'
-import ToolBar from '../ToolBar/ToolBar'
 import Layout from '../Laout/Layout'
 
 function FavoritePage() {

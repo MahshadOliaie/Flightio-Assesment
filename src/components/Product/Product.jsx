@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import HeartSvg from '../HeartSvg/HeartSvg'
+import HeartSvg from '../SVGs/HeartSvg/HeartSvg'
 import CSS from './product.module.css'
 import FavoriteItems from '../../context/favoriteItem/FavoriteItem';
 import { useNavigate } from 'react-router-dom';
